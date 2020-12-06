@@ -1,22 +1,41 @@
 //your variable declarations here
 Spaceship bob = new Spaceship();
+ArrayList <Asteroid> deb = new ArrayList <Asteroid>();
 Star[] space = new Star[300];
 public void setup() 
 {
-  size(500,500);
+  //frameRate(120);
   background(0);
-  
-  for (int i = 0; i < space.length; i++)
-  {
+  size(500,500);
+
+//creates stars
+  for (int i = 0; i < space.length; i++){
     space[i] = new Star();
   }
+  for(int i =0; i<15; i++){
+    deb.add(new Asteroid());
+  }
+  
 }
-public void draw() 
-{
-  background(0);
+public void draw() {
+  fill(0,0,0,40);
+  rect(0,0,500,500);
+
+  //moves and shows spaceship
   bob.move();
   bob.show();
-  
+ 
+ //moves and shows asteroids
+  for(int i = 0; i < deb.size(); i++){
+      deb.get(i).move();
+      deb.get(i).show();
+      
+     if (dist(deb.get(i).getX(), deb.get(i).getY(), bob.getX(), bob.getY())<20){
+        deb.remove(i);
+        i--;
+     }
+    }
+ 
   //draws many stars
   for (int i = 0; i < space.length; i++)
   {
@@ -24,6 +43,9 @@ public void draw()
   }
 }
 
+
+
+//spaceship controls
 public void keyPressed(){
   //speeds up
   if (key == 'w'){
@@ -46,5 +68,3 @@ public void keyPressed(){
     bob.setYspeed(0);
   }
 }
-
-
