@@ -4,8 +4,8 @@ class Star //note that this class does NOT extend Floater
   private double starSize;
   public Star()
   {
-    starX = (int)(Math.random()*500);
-    starY = (int)(Math.random()*500);
+    starX = (int)(Math.random()*600);
+    starY = (int)(Math.random()*600);
     starSize = (Math.random()+1);
   }
   public void show()
