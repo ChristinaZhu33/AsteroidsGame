@@ -20,13 +20,20 @@ public Asteroid(){
   yCorners[5] = 0;  
     
      myColor = color(200,200,200);
-     myCenterX = (int)(Math.random()*500)+1;
-     myCenterY = (int)(Math.random()*500)-1;//holds center coordinates
+     myCenterX = (int)(Math.random()*600)+1;
+     myCenterY = (int)(Math.random()*600)-1;//holds center coordinates
      myXspeed = (Math.random()*2)-2;
      myYspeed = (Math.random()*2)-2; //holds the speed of travel
      myPointDirection = 0;//holds the current direction
-     rotSpeed = (int)(Math.random()*10)+3;
+     
+      //myPointDirection = Math.random()*360;
+    if(Math.random() < 0.5)
+      rotSpeed = (int)(Math.random()*7)+3;
+    else
+      rotSpeed = (int)(Math.random()*-7)-3;
+     
 }
+
 public void move(){
     turn(rotSpeed);
     super.move();
@@ -40,4 +47,3 @@ public void move(){
  }
   
 }
-
