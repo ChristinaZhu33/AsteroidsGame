@@ -12,8 +12,8 @@ class Spaceship extends Floater
     yCorners[2] = 8;
     myColor = color(255, 77, 0);
     //myColor = 255; //white spaceship
-    myCenterX = 200;
-    myCenterY = 200; //holds center coordinates
+    myCenterX = 300;
+    myCenterY = 300; //holds center coordinates
     myXspeed = 0;
     myYspeed = 0; //holds the speed of travel
     myPointDirection = 0; //holds the current direction
@@ -34,11 +34,22 @@ class Spaceship extends Floater
     public void setYspeed(double y) {
     myYspeed = y;
   }
+  
+//"getter" functions  
     public float getX() {
       return (float)myCenterX;
     }
     public float getY() {
       return (float)myCenterY;
- }
+    }
+    public float getXs() {
+      return (float)myXspeed;
+    }
+    public float getYs() {
+      return (float)myYspeed;
+    }
+    public double getPointDirection() {
+    return myPointDirection;
+  }
     
 }
